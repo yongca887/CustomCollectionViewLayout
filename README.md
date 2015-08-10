@@ -1,2 +1,2 @@
 # CustomCollectionViewLayout
-一个iOS的自定义UICollectionViewLayoutDemo.
+iOS的自定义UICollectionViewLayout Demo.
