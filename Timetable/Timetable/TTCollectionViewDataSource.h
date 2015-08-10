@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UICollectionView.h"
+#import <UIKit/UIKit.h>
+@class TTCourse;
 
-@interface TTCollectionDataSource : NSObject<UICollectionViewDataSource>
+@interface TTCollectionViewDataSource : NSObject<UICollectionViewDataSource>
+
+- (TTCourse *)courseAtIndexPath:(NSIndexPath *)indexPath;
+- (NSArray *)indexPathsOfEventsBetweenMinDayIndex:(NSInteger)minDayIndex maxDayIndex:(NSInteger)maxDayIndex minStartHour:(NSInteger)minStartHour maxStartHour:(NSInteger)maxStartHour;
 
 @end

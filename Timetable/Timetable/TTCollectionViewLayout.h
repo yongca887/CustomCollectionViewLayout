@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const CSCollectionElementKindCourseHeaderView = @"CourseHeaderView";
+static NSString *const CSCollectionElementKindWeekHeaderView = @"WeekHeaderView";
+
 @interface TTCollectionViewLayout : UICollectionViewLayout
 
 @end

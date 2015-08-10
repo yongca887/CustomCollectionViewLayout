@@ -9,12 +9,19 @@
 #import "ViewController.h"
 #import "TTCollectionViewDataSource.h"
 #import "TTCollectionViewLayout.h"
+#import "TTCourseCollectionViewCell.h"
+#import "TTCollectionWeekHeaderView.h"
+#import "TTCollectionCourseHeaderView.h"
+#import "TTFixedHeaderViewLayout.h"
+#import "Masonry.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) UICollectionView *timetableCollectionView;
 @property (nonatomic, strong) TTCollectionViewDataSource *collectionViewDataSource;
-@property (nonatomic, strong) TTCollectionViewLayout *collectionViewLayout;
+@property (nonatomic, strong) TTFixedHeaderViewLayout *collectionViewLayout;
+
+@property (nonatomic, strong) UIView *lineView;
 
 @end
 
@@ -23,7 +30,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.view addSubview:self.timetableCollectionView];
+//    [self.view addSubview:self.lineView];
+}
+
+- (void)viewDidLayoutSubviews {
+    //自动布局
+    [_timetableCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
     
+    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(39);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(1);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +58,11 @@
 - (UICollectionView *)timetableCollectionView {
     if (nil == _timetableCollectionView) {
         _timetableCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.collectionViewLayout];
+        _timetableCollectionView.backgroundColor = [UIColor whiteColor];
+        [_timetableCollectionView registerClass:[TTCourseCollectionViewCell class] forCellWithReuseIdentifier:@"CourseCell"];
+        [_timetableCollectionView registerClass:[TTCollectionWeekHeaderView class] forSupplementaryViewOfKind:CSCollectionElementKindWeekHeaderView withReuseIdentifier:@"WeekHeaderView"];
+        [_timetableCollectionView registerClass:[TTCollectionCourseHeaderView class] forSupplementaryViewOfKind:CSCollectionElementKindCourseHeaderView withReuseIdentifier:@"CourseHeaderView"];
+        
         _timetableCollectionView.dataSource = self.collectionViewDataSource;
     }
     
@@ -52,10 +79,19 @@
 
 - (TTCollectionViewLayout *)collectionViewLayout {
     if (nil == _collectionViewLayout) {
-        _collectionViewLayout = [[TTCollectionViewLayout alloc] init];
+        _collectionViewLayout = [[TTFixedHeaderViewLayout alloc] init];
     }
     
     return _collectionViewLayout;
+}
+
+- (UIView *)lineView {
+    if (nil == _lineView) {
+        _lineView = [[UIView alloc] initWithFrame:CGRectZero];
+        _lineView.backgroundColor = [UIColor grayColor];
+    }
+    
+    return _lineView;
 }
 
 @end

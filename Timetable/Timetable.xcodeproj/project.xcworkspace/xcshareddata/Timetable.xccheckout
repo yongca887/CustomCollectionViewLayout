@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E5A0822E-BF98-4D12-8CCD-DF88469C7918</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Timetable</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E5A927FFF32A9C901DC75D4A0CC083B0EA815536</key>
+		<string>https://github.com/yongca887/CustomCollectionViewLayout.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Timetable/Timetable.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E5A927FFF32A9C901DC75D4A0CC083B0EA815536</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yongca887/CustomCollectionViewLayout.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E5A927FFF32A9C901DC75D4A0CC083B0EA815536</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E5A927FFF32A9C901DC75D4A0CC083B0EA815536</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CustomCollectionViewLayout</string>
+		</dict>
+	</array>
+</dict>
+</plist>
